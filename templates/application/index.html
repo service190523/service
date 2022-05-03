@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "applications" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "applications" %}</h2>
+<br>
+{% if application.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "datea" %}</th>
+				<th>{% trans "user" %}</th>
+				<th>{% trans "title" %}</th>
+				<th>{% trans "movement" %}</th>
+				<th></th>
+				<!--<th><a href="{% url 'application_create'%}">{% trans "Add" %}</a></th>				-->
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in application %}
+			<tr>
+				<td>
+					<p>{{ n.datea }}</p>	
+				</td>
+				<td>
+					<p>{{ n.user }}</p>	
+					<p>{{ n.user.first_name }} {{ n.user.last_name }}</p>			
+					<p>{{ n.user.email }}</p>	
+				</td>
+				<td>
+					<p>{{ n.title }}</p>	
+				</td>
+				<td>
+					<p><a href="{% url 'movement_index' n.id%}">{% trans "movements" %}</a></p>		
+				</td>				
+				<td>
+					<!--<a href="{% url 'application_edit' n.id %}">{% trans "Change" %}</a> |-->
+					<a href="{% url 'application_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'application_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

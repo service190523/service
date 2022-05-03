@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% trans "Read" %}{% endblock header %}
+{% block content %}
+<h2>{% trans "employee" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h4>{{ employee.fio }}</h4>			
+			<h5>{{ employee.position }}</h5>			
+		</div>
+		<div class="card-body">
+			<p><strong>{% trans "sex" %}</strong>: {{ employee.sex }}</p>			
+			<p><strong>{% trans "birthday" %}</strong>: {{ employee.birthday | date:"d.m.Y" }}</p>			
+			<p><strong>{% trans "address" %}</strong>: {{ employee.address }}</p>			
+			<p><strong>{% trans "phone" %}</strong>: {{ employee.phone }}</p>			
+		</div>
+		<div class="card-footer">
+			<p>{{ employee.user }}</p>					
+		</div>	
+	</div>			
+	<br>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'employee_index' %}">{% trans "Back" %}</a>    		
+</div>
+
+{% endblock content %}

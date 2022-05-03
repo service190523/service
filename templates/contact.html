@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<div class="col-md-3">
+		<h3 align="center">{% trans "contacts" %}</h3>		
+		<address>
+			<h2 align="center">пр-т. Нурсултана Назарбаева 56, Караганда 100000</h2>			
+		</address>				
+		<p><a href="tel:+77212564422">+7(7212)564-422</a><p>
+	</div>
+	<div class="col-md-9" style="position:relative;overflow:hidden;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.2692179322235!2d73.10220881570856!3d49.8186050793931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424346e496c789ff%3A0xbf6b602f3acf7ee1!2z0JrQsNGA0LDQs9Cw0L3QtNC40L3RgdC60LjQuSDRgtC10YXQvdC40YfQtdGB0LrQuNC5INGD0L3QuNCy0LXRgNGB0LjRgtC10YI!5e0!3m2!1sru!2skz!4v1651484137638!5m2!1sru!2skz" width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+</div>
+{% endblock content %}

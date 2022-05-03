@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "applications" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "applications" %}</h2>
+<h4>{{first_name}} {{last_name}}</h4>
+<h5>{{email}}</h5>
+<br>
+{% if application.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "datea" %}</th>
+				<th>{% trans "user" %}</th>
+				<th>{% trans "details" %}</th>
+				<th><a href="{% url 'application_create'%}">{% trans "Add" %}</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in application %}
+			<tr>
+				<td>
+					<p>{{ n.datea }}</p>	
+				</td>
+				<td>
+					<p>{{ n.user }}</p>	
+					<p>{{ n.user.first_name }} {{ n.user.last_name }}</p>			
+					<p>{{ n.user.email }}</p>	
+				</td>
+				<td>
+					<p>{{ n.title }}</p>
+					<p>{{ n.details }}</p>	
+				</td>				
+				<td>
+					<a href="{% url 'application_read' n.id %}">{% trans "View" %}</a> 					
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'application_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}
+

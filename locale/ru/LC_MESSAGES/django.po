@@ -1,0 +1,424 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-03 15:46+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
+"100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\orlov\forms.py:37 .\templates\employee\index.html:15
+#: .\templates\position\create.html:6 .\templates\position\edit.html:6
+#: .\templates\position\read.html:6
+msgid "position"
+msgstr "Должность"
+
+#: .\orlov\forms.py:60 .\templates\application\read.html:27
+#: .\templates\employee\create.html:6 .\templates\employee\edit.html:6
+#: .\templates\employee\read.html:6 .\templates\movement\index.html:21
+#: .\templates\movement\read.html:26
+msgid "employee"
+msgstr "Сотрудник"
+
+#: .\orlov\models.py:29
+msgid "position_title"
+msgstr "Название должности"
+
+#: .\orlov\models.py:50
+msgid "surname"
+msgstr "Фамилия"
+
+#: .\orlov\models.py:51 .\templates\person\index.html:12
+msgid "name"
+msgstr "Имя"
+
+#: .\orlov\models.py:52
+msgid "patronymic"
+msgstr "Отчество"
+
+#: .\orlov\models.py:53 .\templates\employee\read.html:14
+msgid "sex"
+msgstr "Пол"
+
+#: .\orlov\models.py:54 .\templates\employee\read.html:15
+msgid "birthday"
+msgstr "Дата рождения"
+
+#: .\orlov\models.py:55 .\orlov\models.py:128
+#: .\templates\employee\read.html:16 .\templates\person\index.html:13
+#: .\templates\person\read.html:13
+msgid "address"
+msgstr "Адрес"
+
+#: .\orlov\models.py:56 .\orlov\models.py:127
+#: .\templates\employee\index.html:14 .\templates\employee\read.html:17
+#: .\templates\person\index.html:14 .\templates\person\read.html:14
+msgid "phone"
+msgstr "Телефон"
+
+#: .\orlov\models.py:82 .\templates\application\index.html:13
+#: .\templates\application\list.html:15
+msgid "datea"
+msgstr "Дата заявки"
+
+#: .\orlov\models.py:84
+msgid "application_title"
+msgstr "Тема заявки"
+
+#: .\orlov\models.py:85
+msgid "application_details"
+msgstr "Детали заявки"
+
+#: .\orlov\models.py:104 .\templates\application\read.html:25
+#: .\templates\movement\index.html:18 .\templates\movement\read.html:14
+msgid "datem"
+msgstr "Дата"
+
+#: .\orlov\models.py:105
+msgid "movement_status"
+msgstr "Статус заявки"
+
+#: .\orlov\models.py:106
+msgid "movement_details"
+msgstr "Детали статуса"
+
+#: .\orlov\models.py:145 .\templates\news\index.html:12
+msgid "daten"
+msgstr "Дата"
+
+#: .\orlov\models.py:146
+msgid "title_news"
+msgstr "Заголвок новости"
+
+#: .\orlov\models.py:147
+msgid "details_news"
+msgstr "Детали"
+
+#: .\orlov\models.py:148
+msgid "photo_news"
+msgstr "Фотография"
+
+#: .\templates\application\create.html:3 .\templates\application\create.html:4
+#: .\templates\employee\create.html:3 .\templates\employee\create.html:4
+#: .\templates\movement\create.html:3 .\templates\movement\index.html:22
+#: .\templates\movement\index.html:51 .\templates\news\create.html:3
+#: .\templates\news\index.html:45 .\templates\person\create.html:3
+#: .\templates\position\create.html:3 .\templates\position\create.html:4
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\application\create.html:6 .\templates\application\edit.html:6
+#: .\templates\application\read.html:6 .\templates\movement\create.html:6
+#: .\templates\movement\edit.html:6 .\templates\movement\index.html:6
+msgid "application"
+msgstr "Заявка"
+
+#: .\templates\application\create.html:13 .\templates\application\edit.html:13
+#: .\templates\employee\create.html:13 .\templates\employee\edit.html:13
+#: .\templates\movement\create.html:18 .\templates\movement\edit.html:18
+#: .\templates\news\create.html:12 .\templates\news\edit.html:12
+#: .\templates\person\create.html:13 .\templates\person\edit.html:13
+#: .\templates\position\create.html:13 .\templates\position\edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\application\create.html:14 .\templates\application\edit.html:14
+#: .\templates\application\read.html:50 .\templates\employee\create.html:14
+#: .\templates\employee\edit.html:14 .\templates\employee\read.html:24
+#: .\templates\movement\create.html:19 .\templates\movement\edit.html:19
+#: .\templates\movement\index.html:12 .\templates\movement\read.html:32
+#: .\templates\news\create.html:13 .\templates\news\edit.html:13
+#: .\templates\news\read.html:28 .\templates\person\create.html:14
+#: .\templates\person\edit.html:14 .\templates\person\read.html:22
+#: .\templates\position\create.html:14 .\templates\position\edit.html:14
+#: .\templates\position\read.html:18
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\application\edit.html:3 .\templates\application\edit.html:4
+#: .\templates\application\index.html:39 .\templates\employee\edit.html:3
+#: .\templates\employee\edit.html:4 .\templates\employee\index.html:33
+#: .\templates\movement\edit.html:3 .\templates\movement\index.html:41
+#: .\templates\news\edit.html:3 .\templates\news\index.html:35
+#: .\templates\person\edit.html:3 .\templates\position\edit.html:3
+#: .\templates\position\edit.html:4 .\templates\position\index.html:25
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\application\index.html:3 .\templates\application\index.html:6
+#: .\templates\application\list.html:3 .\templates\application\list.html:6
+#: .\templates\base.html:59 .\templates\base.html:66
+msgid "applications"
+msgstr "Заявки"
+
+#: .\templates\application\index.html:14 .\templates\application\list.html:16
+#: .\templates\person\read.html:17
+msgid "user"
+msgstr "Пользователь"
+
+#: .\templates\application\index.html:15 .\templates\application\read.html:16
+#: .\templates\news\index.html:13 .\templates\position\index.html:13
+msgid "title"
+msgstr "Заголвок"
+
+#: .\templates\application\index.html:16 .\templates\application\read.html:20
+#: .\templates\movement\create.html:11 .\templates\movement\edit.html:11
+#: .\templates\movement\index.html:3 .\templates\movement\index.html:11
+msgid "movement"
+msgstr "Движение заявки"
+
+#: .\templates\application\index.html:18 .\templates\application\list.html:18
+#: .\templates\application\list.html:45 .\templates\employee\index.html:17
+#: .\templates\employee\index.html:43 .\templates\news\index.html:15
+#: .\templates\person\index.html:40 .\templates\position\index.html:15
+#: .\templates\position\index.html:35
+msgid "Add"
+msgstr "Добавить"
+
+#: .\templates\application\index.html:36
+msgid "movements"
+msgstr "Движение заявок"
+
+#: .\templates\application\index.html:40 .\templates\application\list.html:37
+#: .\templates\employee\index.html:34 .\templates\news\index.html:36
+#: .\templates\person\index.html:32 .\templates\position\index.html:26
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\application\index.html:41 .\templates\employee\index.html:35
+#: .\templates\movement\index.html:43 .\templates\news\index.html:37
+#: .\templates\position\index.html:27
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\application\list.html:17 .\templates\application\read.html:17
+#: .\templates\movement\index.html:20 .\templates\movement\read.html:22
+msgid "details"
+msgstr "Детали"
+
+#: .\templates\application\read.html:3 .\templates\application\read.html:4
+#: .\templates\employee\read.html:3 .\templates\employee\read.html:4
+#: .\templates\movement\index.html:42 .\templates\movement\read.html:3
+#: .\templates\news\read.html:3 .\templates\person\read.html:3
+#: .\templates\position\read.html:3 .\templates\position\read.html:4
+msgid "Read"
+msgstr "Просмотреть"
+
+#: .\templates\application\read.html:26 .\templates\movement\index.html:19
+#: .\templates\movement\read.html:18
+msgid "status"
+msgstr "Статус заявки"
+
+#: .\templates\base.html:37
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\base.html:44 .\templates\base.html:64
+#: .\templates\news\index.html:3 .\templates\news\index.html:6
+#: .\templates\news\list.html:3 .\templates\news\list.html:6
+msgid "newss"
+msgstr "Новости"
+
+#: .\templates\base.html:47 .\templates\contact.html:8
+msgid "contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html:56 .\templates\position\index.html:3
+#: .\templates\position\index.html:6
+msgid "positions"
+msgstr "Должности"
+
+#: .\templates\base.html:57 .\templates\employee\index.html:3
+#: .\templates\employee\index.html:6
+msgid "employees"
+msgstr "Сотрудники"
+
+#: .\templates\base.html:61 .\templates\person\index.html:3
+#: .\templates\person\index.html:6
+msgid "persons"
+msgstr "Клиенты"
+
+#: .\templates\base.html:67
+msgid "cabinet?"
+msgstr "Адрес, телефон"
+
+#: .\templates\base.html:69 .\templates\registration\my_account.html:4
+#: .\templates\registration\my_account.html:10
+msgid "My account"
+msgstr "Мой аккаунт"
+
+#: .\templates\base.html:70
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_change_form.html:14
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: .\templates\base.html:72
+msgid "Log out"
+msgstr "Выйти"
+
+#: .\templates\base.html:77
+msgid "Log In"
+msgstr "Вход"
+
+#: .\templates\base.html:78 .\templates\registration\signup.html:4
+#: .\templates\registration\signup.html:10
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\templates\employee\index.html:13
+msgid "fio"
+msgstr "ФИО"
+
+#: .\templates\index.html:4 .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "ИП Орлов"
+
+#: .\templates\news\create.html:6 .\templates\news\edit.html:6
+#: .\templates\news\read.html:6
+msgid "news"
+msgstr "Новость"
+
+#: .\templates\person\create.html:6 .\templates\person\edit.html:6
+#: .\templates\person\read.html:6
+msgid "person"
+msgstr "Клиент"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged out!"
+msgstr "Вышли!"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Login again"
+msgstr "Войти снова"
+
+#: .\templates\registration\login.html:7
+msgid "Incorrect login or password"
+msgstr "Неверный логин или пароль"
+
+#: .\templates\registration\login.html:12
+msgid "You dont have access"
+msgstr "У вас нет доступа"
+
+#: .\templates\registration\login.html:14
+msgid "Login to see this page"
+msgstr "Войдите, чтобы увидеть эту страницу"
+
+#: .\templates\registration\login.html:22
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: .\templates\registration\login.html:26
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\registration\login.html:31
+msgid "Lost password?"
+msgstr "Забытый пароль?"
+
+#: .\templates\registration\my_account.html:14
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr "Пароль изменен"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset completed!"
+msgstr "Сброс пароля завершен!"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log in again?"
+msgstr "Войти снова?"
+
+#: .\templates\registration\password_reset_confirm.html:5
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Подтверждение сброса пароля"
+
+#: .\templates\registration\password_reset_confirm.html:17
+#: .\templates\registration\password_reset_form.html:10
+#: .\templates\registration\password_reset_form.html:15
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_confirm.html:24
+msgid "Please enter (and confirm) your new password."
+msgstr "Пожалуйста, введите (и подтвердите) новый пароль."
+
+#: .\templates\registration\password_reset_confirm.html:30
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:35
+msgid "Confirm password:"
+msgstr "Подтвердить пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:46
+msgid "Password reset failed"
+msgstr "Не удалось сбросить пароль"
+
+#: .\templates\registration\password_reset_confirm.html:47
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "Ссылка для сброса пароля недействительна, возможно, из-за того, что "
+"использовано. Пожалуйста, запросите новый сброс пароля."
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_done.html:7
+msgid "Check your email"
+msgstr "Проверьте свою электронную почту"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Asked password reset email"
+msgstr "Электронная почта для сброса пароля"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Follow the link below:"
+msgstr "Перейдите по ссылке ниже:"
+
+#: .\templates\registration\register_done.html:10
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\registration\register_done.html:11
+msgid "Your account has been successfully created."
+msgstr "Ваша учетная запись успешно создана."
+
+#: .\templates\registration\register_done.html:11
+#: .\templates\registration\signup.html:18
+msgid "Log in"
+msgstr "Вход"
+
+#: .\templates\registration\signup.html:14
+msgid "Create an account"
+msgstr "Завести аккаунт"
+
+#: .\templates\registration\signup.html:18
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"

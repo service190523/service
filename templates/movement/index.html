@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "movement" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "application" %}</h2>
+<h4>{{ app.datea| date:"d.m.Y"  }}</h4>
+<h4>{{ app.user  }}</h4>
+<h4>{{ app.user.first_name }} {{ app.user.last_name }}</h4>
+<h4>{{ app.title  }}</h4>
+<h2>{% trans "movement" %}</h2>
+<a class="btn btn-outline-info" style="width:100px"  href="{% url 'application_index' %}">{% trans "Back" %}</a>    
+{% if movement.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "datem" %}</th>
+				<th>{% trans "status" %}</th>
+				<th>{% trans "details" %}</th>
+				<th>{% trans "employee" %}</th>
+				<th><a href="{% url 'movement_create' application_id %}">{% trans "Create" %}</a></th>					
+			</tr>
+		</thead>
+		<tbody>
+			{% for p in movement %}
+			<tr>
+				<td>
+					<p>{{ p.datem }}</p>
+				</td>
+				<td>
+					<p>{{ p.status }}</p>
+				</td>
+				<td>
+					<p>{{ p.details }}</p>
+				</td>
+				<td>
+					<p>{{ p.employee }}</p>
+				</td>
+				<td>
+					<a href="{% url 'movement_edit' p.id application_id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'movement_read' p.id application_id %}">{% trans "Read" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'movement_delete' p.id application_id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a class="btn btn-outline-success" href="{% url 'movement_create' application_id %}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

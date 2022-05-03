@@ -1,0 +1,134 @@
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+/*background-color: var(--dark-background);			
+color: var(--main-text);*/
+/* Общая настройка */
+body {	
+	/*background-color: azure;	*/
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.container {	
+	padding: 5px;	
+}
+.container-fluid {	
+	padding: 5px;		
+}
+
+/* Основная часть */
+p, ul,li, label {	
+	color: navy;	
+}
+h1, h2, h3, h4, h5, h6 {	
+	color: navy;	
+}
+input, textarea,address{	
+	color: navy;	
+}
+.copyrights {	
+	background-color: lightcyan;		
+}
+.control-group{	
+	color: navy;
+}
+/*  Джамботрон */
+.jumbotron {	
+	background-color: lightcyan;	
+}
+/* Секции*/
+#home {
+	color: navy;
+	font-size: xx-large;	
+}
+#home h1 {
+	padding-top: 100px;
+	color: navy;
+	font-weight: bolder;
+	text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
+                 #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
+                 #cad5e2 5px 5px 0;
+	font-size: xxx-large;
+}
+#section1 {
+    position:relative;    
+	padding: 50px;
+}
+#section1 h2 {
+	color: navy;
+	font-size: x-large;
+}
+
+#section2 {
+    position:relative;   
+	padding: 50px;	
+}
+#section2 h2 {
+	color: navy;
+	font-size: x-large;
+}
+
+#section3 {
+    position:relative; 
+	padding: 50px;	
+}
+#section3 h2 {
+	color: red;
+	font-size: x-large;
+}
+
+#section4 {
+    position:relative;    
+	padding: 50px;
+}
+/*  Карточки */
+.card {	
+	margin-top: 10px;
+	background-color: lightcyan;	
+}
+.card-body {	
+	background-color: lightcyan;		
+}
+/*  Таблицы */
+table.dataTable thead {
+	background-color: lightcyan;		
+	color: navy;
+}
+table.dataTable tbody {
+	background-color: azure;		
+}
+table.dataTable td {
+	background-color: azure;		
+	color: navy;
+}
+table {	
+	color: navy;
+}
+/* Подвал */
+
+#footer{
+	padding: 10px;
+	font-size: large;	
+	background-color: azure;	
+	width: 100%;
+	color: navy;
+	text-align: center;
+	clear:both;	
+}
+
+#footer a{
+	color: navy;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#footer h1, p, ul,li{
+	color: navy;	
+}
+
+#footer a:hover{
+	color: navy;
+	font-size: 12px;
+	text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h5>{{ movement.application }}</h5>
+		</div>
+		<div class="card-body">
+			<table>
+				<tr>
+					<td><strong>{% trans "datem" %}</strong>&nbsp:</td>
+					<td>{{ movement.datem }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "status" %}</strong>&nbsp:</td>
+					<td>{{ movement.status }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "details" %}</strong>&nbsp:</td>
+					<td>{{ movement.details }}</td>
+				</tr>
+				<tr>
+					<td><strong>{% trans "employee" %}</strong>&nbsp:</td>
+					<td>{{ movement.employee }}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="card-footer text-muted">
+			<a class="btn btn-outline-info" style="width:100px" href="{% url 'movement_index' application_id  %}">{% trans "Back" %}</a>    	
+		</div>
+	</div>
+</div>
+{% endblock content %}

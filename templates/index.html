@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App Name" %}{% endblock title %}
+{% block header %}
+	
+{% endblock header %}
+{% block content %}
+<div class="jumbotron">
+	<h1>Дом — это живой организм, которому нужен уход и внимание</h1>
+	<hr class="my-4">
+	<p>ИП Орлова создана профессионалами в сфере эксплуатации недвижимости и специализируется на профессиональном управлении многоквартирными домами, административно-производственными зданиями и сооружениями.</p>
+</div>
+
+	<section id="section2">
+		<h3>Наши услуги:</h3>
+		<div class="row" style="padding: 5px">
+			<div class="col-md-3">
+				<img src="{% static 'images/house.jpg' %}" style="width:100%; max-width:400px;; padding: 10px;">
+			</div>
+			<div class="col-md-9">
+				<h4>Техническое обслуживание недвижимости</h4>
+				<p>Профессиональные услуги по обслуживанию инженерных систем, управлению и комплексному техническому обслуживанию зданий и сооружений</p>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px">
+			<div class="col-md-9">
+				<h4>Техническое обслуживание лифтов</h4>
+				<p>Осуществляем даже самые сложные задачи в области монтажа и обслуживания подъемно-транспортного оборудования</p>
+			</div>
+			<div class="col-md-3">
+				<img src="{% static 'images/elevator.jpg' %}" style="width:100%; max-width:400px;; padding: 10px;">
+			</div>			
+		</div>
+		<div class="row" style="padding: 5px">
+			<div class="col-md-3">
+				<img src="{% static 'images/maintenance.jpg' %}" style="width:100%; max-width:400px;; padding: 10px;">
+			</div>
+			<div class="col-md-9">
+				<h4>Бытовые услуги</h4>
+				<p>Оказываем широкий спектр услуг в области электромонтажных, сантехнических и отделочных работ</p>
+			</div>
+		</div>
+	</section> 
+
+{% endblock content %}
+
+
