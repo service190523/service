@@ -29,10 +29,8 @@ SECRET_KEY = 'django-insecure-lm6#&qsrnw+59&*6!yj(_5%*&xi6p&=nrl=pjc78is)=u%10dz
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = ['127.0.0.1', 'service777.herokuapp.com',]
 
-DEBUG = False 
-#DEBUG = True
 
 # Application definition
 
@@ -47,8 +45,8 @@ INSTALLED_APPS = [
     'django_cleanup',
     'crispy_forms',
     'widget_tweaks',
-    #'cloudinary_storage',
-    #'cloudinary',   
+    'cloudinary_storage',
+    'cloudinary',   
 ]
 
 MIDDLEWARE = [
@@ -95,23 +93,23 @@ DATABASES = {
     #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'service',
-        'USER' : 'customer',
-        'PASSWORD' : 'customer',
-        'HOST' : '127.0.0.1',
-        'PORT' : '5432',
-    }
-
     #'default': {
     #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #    'NAME': 'd8oni95b913rei',
-    #    'USER' : 'yrzmpyegryggfb',
-    #    'PASSWORD' : 'c54d8262dd23660dbc1962ea7fe0969de78d1d40ac04e223e25a8e633cf68273',
-    #    'HOST' : 'ec2-44-199-143-43.compute-1.amazonaws.com',
+    #    'NAME': 'service',
+    #    'USER' : 'customer',
+    #    'PASSWORD' : 'customer',
+    #    'HOST' : '127.0.0.1',
     #    'PORT' : '5432',
     #}
+
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2rhc0dic3fh1j',
+        'USER' : 'vnmtzprjqqccxd',
+        'PASSWORD' : 'bfec8c12323bc4d02af5473f7a1b0c55bfb224f569ddee7a35b20ff23779f260',
+        'HOST' : 'ec2-3-211-6-217.compute-1.amazonaws.com',
+        'PORT' : '5432',
+    }
     
 }
 
@@ -180,9 +178,9 @@ LOGIN_URL = '/index'
 # Сохранения изображения
 """
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hq0bhsbs6',
-    'API_KEY': '366438897154387',
-    'API_SECRET': 'fFao_8-JrxuY2fdZLw4URm3w0eo',
+    'CLOUD_NAME': 'hxswkk9jx',
+    'API_KEY': '997576523626946',
+    'API_SECRET': '9DIwU54439Nf3LjUWQ8xo8ort8w',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 """
