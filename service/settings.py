@@ -176,14 +176,12 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/index'
 
 # Сохранения изображения
-"""
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hxswkk9jx',
     'API_KEY': '997576523626946',
     'API_SECRET': '9DIwU54439Nf3LjUWQ8xo8ort8w',
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-"""
 
 # Отправка почты
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
