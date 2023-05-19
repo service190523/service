@@ -29,7 +29,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     #path('report/', views.report, name='report'),        
     path('admin/', admin.site.urls),
-    path('signup/$', views.signup, name='signup'),
     path('i18n/', include('django.conf.urls.i18n')),
 
     path('person/index/', views.person_index, name='person_index'),
@@ -73,7 +72,8 @@ urlpatterns = [
 
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('settings/account/$', views.UserUpdateView.as_view(), name='my_account'),
+    path('signup/', views.signup, name='signup'),
+    path('settings/account/', views.UserUpdateView.as_view(), name='my_account'),
     path('password-reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),

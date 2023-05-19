@@ -29,7 +29,8 @@ $(document).ready( function () {
 			}
 		}
 	});
-
+} );
+$(document).ready( function () {
 	$('#myTable2').DataTable({
 		paging: true,
 		ordering: false,

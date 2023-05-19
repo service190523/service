@@ -9,8 +9,10 @@
     <table>
         {{ form }}
     </table>
-	<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	
-    <button onclick="location.href='{% url 'news_index' %}'" class="btn btn-outline-info" style="width:100px">{% trans "Back" %}</button>	
+	<div class="div-button-left">
+		<button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>	
+		<button onclick="location.href='{% url 'news_index' %}'" class="btn btn-outline-info" style="width:100px">{% trans "Back" %}</button>	
+	</div>
 </form>
 <script type="text/javascript">
 	$(".chosen").chosen();

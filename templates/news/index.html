@@ -6,23 +6,23 @@
 <h2>{% trans "newss" %}</h2>
 {% if news.count > 0 %}
 <div class="row">
-	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+	<table id="myTable" class="table-manager" style="width:100%">
 		<thead>
 			<tr>
-				<th>{% trans "daten" %}</th>
-				<th>{% trans "title" %}</th>
+				<th><p>{% trans "daten" %}</p></th>
+				<th><p>{% trans "title" %}</p></th>
 				<!--<th></th>-->
-				<th><a href="{% url 'news_create'%}">{% trans "Add" %}</a></th>				
+				<th><p><a href="{% url 'news_create'%}">{% trans "Create" %}</a></p></th>				
 			</tr>
 		</thead>
 		<tbody>
 			{% for n in news %}
 			<tr>
 				<td>
-					<p>{{ n.daten }}</p>
+					<p>{{ n.daten | date:"d.m.Y H:i"}}</p>
 				</td>
 				<td>
-					<p>{{ n.title }}</p>	
+					<p>{{ n.title }}</p>						
 				</td>
 				<!--
 				<td>

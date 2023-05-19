@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-lm6#&qsrnw+59&*6!yj(_5%*&xi6p&=nrl=pjc78is)=u%10dz
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'service777.herokuapp.com',]
+ALLOWED_HOSTS = ['127.0.0.1', 'service777.onrender.com',]
 
 
 # Application definition
@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'django_cleanup',
     'crispy_forms',
     'widget_tweaks',
-    'cloudinary_storage',
-    'cloudinary',   
+    #'cloudinary_storage',
+    #'cloudinary',   
 ]
 
 MIDDLEWARE = [
@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'service.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 
     #'default': {
     #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -101,15 +101,6 @@ DATABASES = {
     #    'HOST' : '127.0.0.1',
     #    'PORT' : '5432',
     #}
-
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2rhc0dic3fh1j',
-        'USER' : 'vnmtzprjqqccxd',
-        'PASSWORD' : 'bfec8c12323bc4d02af5473f7a1b0c55bfb224f569ddee7a35b20ff23779f260',
-        'HOST' : 'ec2-3-211-6-217.compute-1.amazonaws.com',
-        'PORT' : '5432',
-    }
     
 }
 
@@ -175,13 +166,13 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/index'
 
-# Сохранения изображения
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hxswkk9jx',
-    'API_KEY': '997576523626946',
-    'API_SECRET': '9DIwU54439Nf3LjUWQ8xo8ort8w',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+## Сохранения изображения
+#CLOUDINARY_STORAGE = {
+#    'CLOUD_NAME': 'hxswkk9jx',
+#    'API_KEY': '997576523626946',
+#    'API_SECRET': '9DIwU54439Nf3LjUWQ8xo8ort8w',
+#}
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Отправка почты
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

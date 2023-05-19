@@ -3,26 +3,24 @@
 {% load i18n %}
 <html>
 <head>
-	 <!-- Обязательные метатеги -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Стили -->
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-	
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
-	<!--  JavaScript. Точнее - им требуются jQuery, Popper.js -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
-	<!-- Bootstrap CSS, JavaScript. Точнее - им требуются jQuery, Popper.js	
+	<!-- Элемент meta определяет метаданные документа. -->
+	<meta charset="utf-8">
+	<!-- Мета-теги для адаптивной вёрстки -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS --> 
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+	<!-- Дополнительный JavaScript; Bootstrap в связке с Popper -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+	<!--  jQuery-->
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+	<!-- Bootstrap CSS, JavaScript. Точнее - им требуются jQuery, Popper.js -->	
 
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<script defer src="{% static 'js/jquery.min.js' %}"></script>
 	<script defer src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script defer src="{% static 'js/popper.min.js' %}"></script>
-	-->
 	
 	<!-- select-box-with-search-option-using-jquery -->
 	<link rel="stylesheet" href="{% static 'css/choosen.css' %}" />
@@ -32,26 +30,26 @@
 	<script src="{% static 'js/choosen.js' %}"></script>
 	<title>{% block title %}Default title{% endblock title %}</title>
 </head>
-	<nav class="navbar navbar-expand-sm bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-center">	
 		<div class="container">
 			<a class="navbar-brand" href="{{ HTTP_HOST }}/">{% trans "Home" %}</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="mainMenu">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'news_list' %}">{% trans "newss" %}</a>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+					<li class="nav-link">
+						<a class="dropdown-item" href="{% url 'news_list' %}">{% trans "newss" %}</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'contact' %}">{% trans "contacts" %}</a>
+					<li class="nav-link">
+						<a class="dropdown-item" href="{% url 'contact' %}">{% trans "contacts" %}</a>
 					</li>
 					{% if user.is_authenticated %}										
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							{{ user.username }}
+						<li class="nav-link dropdown">
+							<a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{{ user.username }} 
 							</a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								{% if request.user.groups.all.0.name == "Managers" %}
 									<a class="dropdown-item" href="{% url 'position_index' %}">{% trans "positions" %}</a>
 									<a class="dropdown-item" href="{% url 'employee_index' %}">{% trans "employees" %}</a>
@@ -108,12 +106,11 @@
 </footer>
 <!-- Пагинация таблиц (Постраничный вывод) https://datatables.net/ -->
 <script src="{% static 'js/datatables.js' %}"></script>
-<!--
+
 <link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}">
 <script src= "{% static 'js/jquery.dataTables.min.js' %}"></script>
--->
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css"> -->
+<!-- <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script> -->
 
 </html>

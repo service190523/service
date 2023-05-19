@@ -5,7 +5,8 @@ from django.db import migrations
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 
-import datetime
+from datetime import datetime, timedelta
+import time
 
 def beginning(apps, schema_editor):
     
@@ -26,11 +27,11 @@ def beginning(apps, schema_editor):
     print("Менеджер добавлен в группу менеджеров")
 
     # Простые пользователи (заявители) id3-7
-    user = User.objects.create_user(username='user1', password='Uu0066+-', first_name='Әсем', last_name = 'Исағали', email = 'user1@mail.ru', last_login=datetime.datetime.now())
-    user = User.objects.create_user(username='user2', password='Uu0066+-', first_name='Ержан', last_name = 'Айтмағанбет', email = 'user2@mail.ru', last_login=datetime.datetime.now())
-    user = User.objects.create_user(username='user3', password='Uu0066+-', first_name='Олжас', last_name = 'Рымбеков', email = 'user3@mail.ru', last_login=datetime.datetime.now())
-    user = User.objects.create_user(username='user4', password='Uu0066+-', first_name='Гүлназ', last_name = 'Жанадилова', email = 'user4@mail.ru', last_login=datetime.datetime.now())
-    user = User.objects.create_user(username='user5', password='Uu0066+-', first_name='Диана', last_name = 'Әкебек', email = 'user5@mail.ru', last_login=datetime.datetime.now())
+    user = User.objects.create_user(username='user1', password='Uu0066+-', first_name='Әсем', last_name = 'Исағали', email = 'user1@mail.ru', last_login=datetime.now())
+    user = User.objects.create_user(username='user2', password='Uu0066+-', first_name='Ержан', last_name = 'Айтмағанбет', email = 'user2@mail.ru', last_login=datetime.now())
+    user = User.objects.create_user(username='user3', password='Uu0066+-', first_name='Олжас', last_name = 'Рымбеков', email = 'user3@mail.ru', last_login=datetime.now())
+    user = User.objects.create_user(username='user4', password='Uu0066+-', first_name='Гүлназ', last_name = 'Жанадилова', email = 'user4@mail.ru', last_login=datetime.now())
+    user = User.objects.create_user(username='user5', password='Uu0066+-', first_name='Диана', last_name = 'Әкебек', email = 'user5@mail.ru', last_login=datetime.now())
     print("Созданы простые пользователи")
         
     ##### Должности #####
@@ -161,45 +162,48 @@ def beginning(apps, schema_editor):
     
     print("Клиенты добавлены в БД")
 
-    ##### Персона (клиент) #####
+    ##### Заявки #####
 
     Application = apps.get_model("orlov", "Application")
     
     application = Application()
-    application.datea = '2022-04-01 12:00:00'
     application.user_id = 3
     application.title = 'Заявка на ремонт протекающего крана'
     application.details = 'Протекает кран на кухне'   
     application.save()
-
+    application.datea = datetime.now() - timedelta(days=30)
+    application.save()
+    
     Movement = apps.get_model("orlov", "Movement")
 
     movement = Movement()
     movement.application_id = 1
-    movement.datem = '2022-04-01 13:00:00'
+    movement.datem = application.datea
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 3
     movement.save()
-
+    
     movement = Movement()
     movement.application_id = 1
-    movement.datem = '2022-04-01 17:00:00'
+    movement.datem = application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 3
     movement.save()
-
+    
     application = Application()
-    application.datea = '2022-04-02 12:00:00'
+    #application.datea = '2022-04-02 12:00:00'
     application.user_id = 4
     application.title = 'Заявка на ремонт сливного бачка'
     application.details = 'Протекает сливной бачок'   
     application.save()
-
+    application.datea = datetime.now() - timedelta(days=29)
+    application.save()
+    
     movement = Movement()
     movement.application_id = 2
-    movement.datem = '2022-04-02 13:00:00'
+    movement.datem = application.datea 
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 3
@@ -207,22 +211,24 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 2
-    movement.datem = '2022-04-02 18:00:00'
+    movement.datem = application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 3
     movement.save()
 
     application = Application()
-    application.datea = '2022-04-03 12:00:00'
+    #application.datea = '2022-04-03 12:00:00'
     application.user_id = 5
     application.title = 'Заявка на установку стиральной машинки'
     application.details = 'Заявка на установку стиральной машинки'   
     application.save()
+    application.datea = datetime.now() - timedelta(days=28);
+    application.save()
 
     movement = Movement()
     movement.application_id = 3
-    movement.datem = '2022-04-03 13:00:00'
+    movement.datem =  application.datea 
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 3
@@ -230,22 +236,24 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 3
-    movement.datem = '2022-04-05 17:00:00'
+    movement.datem =  application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 3
     movement.save()
 
     application = Application()
-    application.datea = '2022-04-04 12:00:00'
+    #application.datea = '2022-04-04 12:00:00'
     application.user_id = 6
     application.title = 'Не работает кнопка 8-го этажа в лифте'
     application.details = 'Не работает кнопка 8-го этажа в лифте'   
     application.save()
-
+    application.datea = datetime.now() - timedelta(days=27);
+    application.save()
+    
     movement = Movement()
     movement.application_id = 4
-    movement.datem = '2022-04-04 14:00:00'
+    movement.datem =  application.datea
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 4
@@ -253,22 +261,24 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 4
-    movement.datem = '2022-04-04 16:00:00'
+    movement.datem =  application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 4
     movement.save()
 
     application = Application()
-    application.datea = '2022-04-05 14:00:00'
+    #application.datea = '2022-04-05 14:00:00'
     application.user_id = 7
     application.title = 'Не работает лифт'
     application.details = 'Не работает лифт'   
     application.save()
-
+    application.datea = datetime.now() - timedelta(days=26);
+    application.save()
+    
     movement = Movement()
     movement.application_id = 5
-    movement.datem = '2022-04-05 14:00:00'
+    movement.datem =  application.datea 
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 4
@@ -276,22 +286,25 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 5
-    movement.datem = '2022-04-05 15:00:00'
+    movement.datem =  application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 4
     movement.save()
 
     application = Application()
-    application.datea = '2022-04-06 10:00:00'
+    #application.datea = '2022-04-06 10:00:00'
     application.user_id = 3
     application.title = 'Не горит освещение на лестничной площадке'
     application.details = 'Не горит освещение на лестничной площадке'   
     application.save()
+    application.datea = datetime.now() - timedelta(days=25);
+    application.save()
+
 
     movement = Movement()
     movement.application_id = 6
-    movement.datem = '2022-04-06 10:00:00'
+    movement.datem =  application.datea 
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 5
@@ -299,22 +312,24 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 6
-    movement.datem = '2022-04-07 09:00:00'
+    movement.datem =  application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 5
     movement.save()
 
     application = Application()
-    application.datea = '2022-04-08 10:00:00'
+    #application.datea = '2022-04-08 10:00:00'
     application.user_id = 4
     application.title = 'Не горит освещение на лестничной площадке'
     application.details = 'Не горит освещение на лестничной площадке'   
     application.save()
+    application.datea = datetime.now() - timedelta(days=24);
+    application.save()
 
     movement = Movement()
     movement.application_id = 7
-    movement.datem = '2022-04-08 10:00:00'
+    movement.datem =  application.datea 
     movement.status = 'Заявка принята'
     movement.details = ''
     movement.employee_id = 5
@@ -322,13 +337,84 @@ def beginning(apps, schema_editor):
 
     movement = Movement()
     movement.application_id = 7
-    movement.datem = '2022-04-08 09:00:00'
+    movement.datem =  application.datea + timedelta(days=1)
     movement.status = 'Заявка исполнена'
     movement.details = ''
     movement.employee_id = 5
     movement.save()
 
     print("Заявки добавлены в БД")
+
+    ##### Новости #####
+    News = apps.get_model("orlov", "News")
+    
+    news = News()
+    news.daten = datetime.now() - timedelta(days=35)
+    news.title = 'Более 300 семей переселят из аварийных домов в столице - акимат'
+    news.details = """В текущем году из опасных домов будут переселены еще более 300 семей, передает Tengrinews.kz со ссылкой на акимат Нур-Султана.
+        Аким столицы Алтай Кульгинов посетил ряд аварийных домов и обсудил вопросы с жильцами.
+        К примеру, пятиэтажное общежитие, расположенное по адресу Дукенулы, 21 (район Сарыарка), было построено в 1966 году. В данном общежитии – 179 комнат. У жильцов периодически возникают проблемы с электропроводкой, канализацией, водой и так далее. При проведении осмотра дома было установлено, что износ дома составляет более 60 процентов, здание признано аварийным. Данное общежитие включено в список сноса.
+    """
+    news.photo = 'images/news1.jpeg' 
+    news.save()
+    
+    news = News()
+    news.daten = datetime.now() - timedelta(days=30)
+    news.title = 'Жители многоэтажки в Уральске живут без газа более месяца'
+    news.details =  """Многоэтажный дом в центре Уральска с 1 марта отключен от газа. Причиной этому стали долги населения. Сейчас они уже погашены, но люди до сих пор вынуждены искать варианты, на чем приготовить еду, передает корреспондент Tengrinews.kz.
+        Девятиэтажное здание на пересечении проспекта Абая и улицы Курмангазы было построено почти 50 лет назад. Здание когда-то являлось общежитием бывшей швейной фабрики имени Клары Цеткин. Сейчас его обслуживает КСК "Юность". В доме, который находится в самом центре города, проблем хоть отбавляй. Самая главная на сегодняшний момент – отсутствие газоснабжения.
+        "Нам отключили газ за неуплату. Долги мы собрали, все погасили. Но до сих пор газоснабжение не возобновили. Больше месяца готовим на электроплитах. Это очень накладно. За электричество приходят огромные счета", - говорит жительница дома Евгения Черкашина.
+    """
+    news.photo = 'images/news2.jpeg' 
+    news.save()
+    
+    news = News()
+    news.daten = datetime.now() - timedelta(days=25)
+    news.title = 'Застройщиков собираются начать штрафовать за препятствие созданию ОСИ в Казахстане'
+    news.details = """Больше двух миллионов тенге придется заплатить предпринимателям, которые препятствуют созданию объединений собственников имущества. Такие штрафы могут появиться после внесения поправок в Кодекс об административных правонарушениях, сообщает Tengrinews.kz со ссылкой на "Хабар 24".
+        Если застройщик не передаст необходимые документы в течение 30 дней после создания ОСИ, его могут оштрафовать на сумму от 100 до 1000 МРП. Для КСК минимальное взыскание – 50 МРП, максимальное – 100.
+        Проголосовать за создание объединения и официально его зарегистрировать можно на платформе eGov
+    """
+    news.photo = 'images/news3.jpeg' 
+    news.save()
+    
+    news = News()
+    news.daten = datetime.now() - timedelta(days=20)
+    news.title = 'Назначен председатель Комитета по делам строительства и ЖКХ'
+    news.details = """МИИР РК назначен председатель Комитета по делам строительства и жилищно-коммунального хозяйства, передает корреспондент Tengrinews.kz со ссылкой на пресс-службу ведомства.
+        "Приказом министра индустрии и инфраструктурного развития Идырысов Алмаз Серикболович назначен на должность председателя Комитета по делам строительства и жилищно-коммунального хозяйства", - говорится в сообщении.
+    """
+    news.photo = 'images/news4.jpeg' 
+    news.save()
+    
+    news = News()
+    news.daten = datetime.now() - timedelta(days=15)
+    news.title = 'Центральная котельная Кокшетау пришла в аварийное состояние'
+    news.details = """Оборудование центральной котельной Кокшетау находится в аварийном состоянии, крайне обветшав за свои полвека службы. Предприятию необходим ремонт, но средств на него нет, передает Tengrinews.kz со ссылкой на "Хабар 24".
+        В Кокшетау самые низкие  тарифы на отопление по республике. По данным канала, они не покрывают затраты производства. К тому же скопились немалые долги потребителей перед предприятием. Руководство считает, что необходимо повысить расценки за услуги. Иначе им не осилить всех расходов. 
+        По информации канала, отопительная котельная №1 города Кокшетау была построена еще в 1977 году и безостановочно работает вот уже почти 45 лет. По словам специалистов, котлоагрегаты здесь давно устарели, а все оборудование работает на износ и нуждается в капитальном ремонте, который требует огромных средств.
+    """
+    news.photo = 'images/news5.jpeg' 
+    news.save()
+    
+    #news = News()
+    #news.daten = datetime.now() - timedelta(days=10)
+    #news.title = ''
+    #news.details = """
+    #"""
+    #news.photo = 'images/news6.jpeg' 
+    #news.save()
+    
+    #news = News()
+    #news.daten = datetime.now() - timedelta(days=5)
+    #news.title = ''
+    #news.details = """
+    #"""
+    #news.photo = 'images/news7.jpeg' 
+    #news.save()
+    
+    print("News Ok")
+
 
 class Migration(migrations.Migration):
 
